@@ -2,16 +2,24 @@ type PageHeroProps = {
     title: string;
     subtitle?: string;
     className?: string;
+    backgroundImage?: string;
 };
 
-export default function PageHero({ title, subtitle, className = '' }: PageHeroProps) {
+export default function PageHero({ title, subtitle, className = '', backgroundImage }: PageHeroProps) {
     return (
         <section className={`bg-background text-foreground pt-32 pb-20 md:pt-40 md:pb-32 transition-colors duration-500 border-b border-border relative overflow-hidden ${className}`}>
-            {/* Dynamic Background Gradients */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 dark:from-primary/10 dark:to-transparent -z-10"></div>
+            {/* Dynamic Background Gradients or Image */}
+            {backgroundImage ? (
+                <div className="absolute inset-0 z-0">
+                    <img src={backgroundImage} alt={title} className="w-full h-full object-cover opacity-20 dark:opacity-10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+                </div>
+            ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 dark:from-primary/10 dark:to-transparent -z-10"></div>
+            )}
 
             {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(21,128,61,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(21,128,61,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] opacity-50 transition-opacity"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(21,128,61,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(21,128,61,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] opacity-50 transition-opacity pointer-events-none"></div>
 
             <div className="container text-center relative z-10">
                 <h1 className="text-4xl md:text-6xl font-black mb-6 animate-in fade-in slide-in-from-bottom duration-500 text-foreground tracking-tight">{title}</h1>

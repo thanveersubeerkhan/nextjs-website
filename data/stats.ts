@@ -3,21 +3,8 @@ export type Stat = {
   label: string;
 };
 
-export const stats: Stat[] = [
-  {
-    value: "200+",
-    label: "Successful Projects",
-  },
-  {
-    value: "150+",
-    label: "Happy Clients",
-  },
-  {
-    value: "100%",
-    label: "On-Time Delivery",
-  },
-  {
-    value: "50+",
-    label: "Professionals",
-  }
+export const stats = [
+    { label: "Successful Projects", value: 200, suffix: "+" },
+    { label: "Happy clients", value: 150, suffix: "+" },
+    { label: "Devloper", value: 50, suffix: "+" },
 ];

@@ -45,8 +45,8 @@ export default function Header() {
             <header
                 ref={headerRef}
                 className={`fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300 ${isScrolled || isMenuOpen
-                        ? 'bg-background/95 border-b border-border shadow-sm backdrop-blur py-3'
-                        : 'bg-transparent border-b border-transparent py-5'
+                    ? 'bg-background/95 border-b border-border shadow-sm backdrop-blur py-3'
+                    : 'bg-transparent border-b border-transparent py-5'
                     }`}
             >
                 <nav className="container flex items-center justify-between">
@@ -56,9 +56,11 @@ export default function Header() {
                         className="flex items-center space-x-2 z-[110] transition-transform hover:scale-105"
                         onClick={() => setIsMenuOpen(false)}
                     >
-                        <span className="text-2xl font-black tracking-tighter transition-colors text-foreground">
-                            SLASH <span className="text-primary">INFO TECH</span>
-                        </span>
+                        <img
+                            src="https://ryanquantum.com/wp-content/uploads/2025/11/ryan-white.png"
+                            alt="RYAN QUANTUM"
+                            className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${isScrolled ? 'brightness-0 dark:brightness-100' : 'brightness-0 invert dark:brightness-100 dark:invert-0'}`}
+                        />
                     </Link>
 
                     {/* Desktop Nav */}
@@ -91,8 +93,8 @@ export default function Header() {
                                                             key={service.slug}
                                                             href={servicePath}
                                                             className={`block px-4 py-3 text-sm font-semibold rounded-xl transition-colors ${serviceActive
-                                                                    ? 'bg-primary text-primary-foreground'
-                                                                    : 'hover:bg-accent hover:text-accent-foreground text-popover-foreground text-muted-foreground'
+                                                                ? 'bg-primary text-primary-foreground'
+                                                                : 'hover:bg-accent hover:text-accent-foreground text-popover-foreground text-muted-foreground'
                                                                 }`}
                                                         >
                                                             {service.title}

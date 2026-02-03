@@ -30,39 +30,36 @@ export default function ContactFormSection() {
     }
 
     return (
-        <div className="bg-card border border-border p-8 md:p-12 rounded-3xl shadow-xl transition-all">
-            <h3 className="text-2xl font-bold mb-8 text-foreground">Send us a Message</h3>
+        <div className="bg-card border border-border p-6 md:p-12 rounded-3xl shadow-xl transition-all">
+            <h3 className="text-2xl font-bold mb-8 text-foreground">Request Free Consultation</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                    <Input label="First Name" placeholder="John" required />
-                    <Input label="Last Name" placeholder="Doe" required />
-                </div>
-                <Input label="Email Address" type="email" placeholder="john@example.com" required />
-
-                <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground">Interested Service</label>
-                    <select className="w-full h-11 bg-background border border-input rounded-md px-3 text-sm text-foreground focus:ring-2 focus:ring-ring focus:outline-none transition-colors">
-                        {services.map(s => (
-                            <option key={s.slug} value={s.slug}>{s.title}</option>
-                        ))}
-                        <option value="other">Other Inquiry</option>
-                    </select>
-                </div>
-
-                <div className="space-y-2">
-                    <label className="text-sm font-medium text-foreground">Project Document (PDF/DOCX)</label>
-                    <input
-                        type="file"
-                        className="w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all cursor-pointer"
+                <div className="space-y-5">
+                    <Input
+                        label="First Name"
+                        placeholder="Your Name"
+                        required
+                        className="rounded-xl border-border/50 focus:ring-primary/20 focus:border-primary h-12 bg-background/50 hover:bg-background transition-colors"
+                    />
+                    <Input
+                        label="Email Address"
+                        type="email"
+                        placeholder="email@example.com"
+                        required
+                        className="rounded-xl border-border/50 focus:ring-primary/20 focus:border-primary h-12 bg-background/50 hover:bg-background transition-colors"
+                    />
+                    <Input
+                        label="Phone Number"
+                        type="tel"
+                        placeholder="+91 98765 43210"
+                        required
+                        className="rounded-xl border-border/50 focus:ring-primary/20 focus:border-primary h-12 bg-background/50 hover:bg-background transition-colors"
                     />
                 </div>
 
-                <Textarea label="Project Description" placeholder="Tell us about your project..." required maxLength={500} />
-
-                <Button type="submit" className="w-full rounded-xl py-4 flex items-center justify-center space-x-2 group">
+                <Button type="submit" className="w-full rounded-2xl py-6 text-lg font-bold flex items-center justify-center space-x-2 group mt-8 shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.02] transition-all duration-300">
                     <span>Submit Request</span>
-                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                 </Button>
             </form>

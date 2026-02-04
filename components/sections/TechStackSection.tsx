@@ -23,8 +23,9 @@ export default function TechStackSection() {
                     {technologies.map((tech) => (
                         <div
                             key={tech.name}
-                            className="relative w-20 h-20 grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110 cursor-default flex items-center justify-center"
+                            className="relative w-20 h-20 opacity-70 hover:opacity-100 transition-all duration-500 hover:scale-125 hover:rotate-3 cursor-default flex items-center justify-center group"
                         >
+                            <div className="absolute inset-0 bg-primary/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <Image
                                 src={tech.image}
                                 alt={tech.name}

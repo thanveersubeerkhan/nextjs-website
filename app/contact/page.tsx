@@ -1,9 +1,23 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import PageHero from '@/components/sections/PageHero';
 import ContactFormSection from '@/components/sections/ContactFormSection';
 import ContactInfoSection from '@/components/sections/ContactInfoSection';
 import ContactStepsSection from '@/components/sections/ContactStepsSection';
 
 export default function ContactPage() {
+    const [isMapLoading, setIsMapLoading] = useState(true);
+
+    // Fallback to ensure loading stops even if onLoad doesn't fire
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsMapLoading(false);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return (
         <div className="bg-background transition-colors duration-500">
             <PageHero
@@ -28,16 +42,39 @@ export default function ContactPage() {
             </section>
 
             {/* Full Width Map Section */}
-            <section className="w-full h-[400px] lg:h-[500px] mt-20 relative grayscale hover:grayscale-0 transition-all duration-700">
+            <section className="w-full h-[400px] lg:h-[500px] mt-20 relative bg-muted/20">
+                {/* Skeleton Loader - Map Pattern */}
+                {isMapLoading && (
+                    <div className="absolute inset-0 z-10 animate-pulse bg-gray-200 dark:bg-gray-800 overflow-hidden">
+                        {/* CSS Pattern to mimic roads/map */}
+                        <div className="absolute inset-0 opacity-20"
+                            style={{
+                                backgroundImage: `linear-gradient(#fff 2px, transparent 2px), linear-gradient(90deg, #fff 2px, transparent 2px)`,
+                                backgroundSize: '100px 100px',
+                                backgroundPosition: '-2px -2px'
+                            }}
+                        ></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="bg-white/50 dark:bg-black/50 backdrop-blur-sm p-4 rounded-xl shadow-sm">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                                    <span className="text-sm font-semibold text-foreground/80">Loading Map...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3911.758652676644!2d77.726207!3d11.350812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDIxJzAyLjkiTiA3N8KwNDMnMzQuNCJF!5e0!3m2!1sen!2sin!4v1631234567890!5m2!1sen!2sin"
+                    src="https://maps.google.com/maps?q=62%2C%20Suriya%20Complex%2C%20Gandhi%20Street%2C%20Thaneerpanthal%20Road%2C%20BR%20Puram%2C%20Hope%20College%2C%20Coimbatore%2C%20Tamil%20Nadu%20641004&t=m&z=15&output=embed&iwloc=near"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="w-full h-full"
+                    className={`w-full h-full grayscale hover:grayscale-0 transition-all duration-700 ${isMapLoading ? 'opacity-0' : 'opacity-100'}`}
+                    onLoad={() => setIsMapLoading(false)}
                 ></iframe>
             </section>
 
@@ -45,7 +82,7 @@ export default function ContactPage() {
             <ContactStepsSection />
             {/* WhatsApp Floating Button */}
             <a
-                href="https://wa.me/919698548633"
+                href="https://wa.me/919677704758"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 flex items-center justify-center group"

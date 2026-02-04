@@ -1,65 +1,113 @@
+"use client";
+
 import Button from '@/components/ui/Button';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function HeroSection() {
     return (
-        <section className="relative overflow-hidden bg-background pt-32 pb-20 md:pt-40 md:pb-32 lg:pt-48 lg:pb-40 min-h-[90vh] flex items-center transition-colors duration-500">
-            {/* Video Background */}
-            <div className="absolute inset-0 z-0 opacity-20 dark:opacity-10 pointer-events-none">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                >
-                    <source src="https://ryanquantum.com/wp-content/uploads/2025/11/16381069-hd_1920_1080_25fps.mp4" type="video/mp4" />
-                </video>
+        <section className="relative overflow-hidden bg-background pt-32 pb-20 md:pt-48 md:pb-32 lg:pt-56 lg:pb-40 min-h-[95vh] flex items-center transition-colors duration-500">
+            {/* Animated Gradient Background */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-0 -left-4 w-[500px] h-[500px] bg-primary/20 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob"></div>
+                <div className="absolute top-0 -right-4 w-[500px] h-[500px] bg-[#4CC3F7]/20 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob animation-delay-2000"></div>
+                <div className="absolute -bottom-8 left-20 w-[500px] h-[500px] bg-[#6B46FE]/20 rounded-full mix-blend-multiply filter blur-[128px] opacity-70 animate-blob animation-delay-4000"></div>
+                {/* Grid Pattern Overlay */}
+                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 grayscale"></div>
             </div>
-            {/* Background Gradient - subtly shifts with theme */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 dark:from-primary/10 dark:via-transparent dark:to-primary/10 z-0"></div>
 
             <div className="container relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    {/* Text Content */}
                     <div className="text-center lg:text-left">
-                        <div className="inline-block mb-6 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
-                            <span className="text-primary text-sm font-bold">Technology That Works The Way You Do.</span>
-                        </div>
-                        <h1 className="font-black text-foreground leading-[1.1] mb-6 animate-in fade-in slide-in-from-left duration-700 tracking-tight text-3xl md:text-6xl lg:text-7xl uppercase">
-                            RYAN <span className="text-primary">QUANTUM</span>
-                        </h1>
-                        <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-in fade-in slide-in-from-left duration-1000 font-medium">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8"
+                        >
+                            <span className="relative flex h-3 w-3">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+                            </span>
+                            <span className="text-sm font-bold uppercase tracking-wider">Innovation First</span>
+                        </motion.div>
+
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="text-5xl md:text-7xl lg:text-[5.5rem] font-black leading-[1.1] mb-6 tracking-tight text-foreground"
+                        >
+                            SLASH <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#4CC3F7]">
+                                INFO TECH
+                            </span>
+                        </motion.h1>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
+                        >
                             We provide end-to-end IT solutions that help businesses streamline operations, enhance productivity, and achieve sustainable growth through technology-driven innovation.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-in fade-in slide-in-from-bottom duration-1000">
-                            <Button size="lg" className="rounded-full px-10 shadow-2xl shadow-primary/20 hover:scale-105 transition-transform font-black">Get a Quote</Button>
-                        </div>
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
+                        >
+                            <Button size="lg" className="rounded-full px-8 h-12 md:h-14 text-base shadow-xl shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-105">
+                                Get a Free Quote <ArrowRight className="ml-2 w-5 h-5" />
+                            </Button>
+                            <Button variant="outline" size="lg" className="rounded-full px-8 h-12 md:h-14 text-base border-2 hover:bg-muted transition-all">
+                                View Our Work
+                            </Button>
+                        </motion.div>
                     </div>
 
-                    <div className="relative aspect-square max-w-[500px] mx-auto lg:max-w-none w-full animate-in fade-in zoom-in duration-1000">
-                        <div className="absolute inset-0 bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
-                        <div className="relative border-4 border-border/50 rounded-3xl overflow-hidden shadow-2xl group">
-                            <Image
-                                src="https://ryanquantum.com/wp-content/uploads/2025/11/MOBILE.gif"
-                                alt="Ryan Quantum Digital Experience"
-                                width={800}
-                                height={600}
-                                className="object-cover transition-transform group-hover:scale-110 duration-1000 w-full h-full"
-                                unoptimized
-                                priority
-                            />
-                            <div className="absolute bottom-6 left-6 right-6 bg-background/80 backdrop-blur-xl p-6 rounded-2xl border border-border">
-                                <p className="text-xs font-black text-primary uppercase tracking-widest mb-1">Ryan Quantum</p>
-                                <p className="text-sm font-black text-foreground uppercase tracking-tight">Expert Web Design and Development Services in Erode</p>
+                    {/* Hero Visual */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        className="relative"
+                    >
+                        {/* Glow Effect */}
+                        <div className="absolute -inset-4 bg-gradient-to-r from-primary to-[#4CC3F7] rounded-full blur-3xl opacity-30 animate-pulse"></div>
+
+                        {/* Main Image Container with Glassmorphism */}
+                        <div className="relative border border-white/20 dark:border-white/10 bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-[3rem] p-4 shadow-2xl">
+                            <div className="rounded-[2.5rem] overflow-hidden relative aspect-square bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-900 dark:to-gray-800">
+                                {/* Placeholder for Hero Visual */}
+                                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-black text-4xl uppercase tracking-widest bg-muted/20">
+                                    Hero Visual
+                                </div>
                             </div>
+
+                            {/* Floating Badge */}
+                            <motion.div
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.6 }}
+                                className="absolute -bottom-6 -left-6 bg-background/90 backdrop-blur-xl border border-border/50 p-4 rounded-2xl shadow-xl max-w-[200px]"
+                            >
+                                <div className="flex items-center gap-2 mb-1">
+                                    <div className="p-1.5 bg-green-500/10 rounded-full text-green-500">
+                                        <Sparkles size={16} />
+                                    </div>
+                                    <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Top Rated</span>
+                                </div>
+                                <p className="text-sm font-bold leading-tight">Trusted by 100+ Businesses in Coimbatore</p>
+                            </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
-
-            {/* Abstract Background Design */}
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl opacity-50 z-0"></div>
-            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-primary/5 rounded-full blur-3xl opacity-50 z-0"></div>
         </section>
     );
 }

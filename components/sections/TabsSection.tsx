@@ -8,7 +8,7 @@ const tabs = [
         id: 'who',
         label: 'Who We Are',
         title: 'Who We Are',
-        content: 'Ryan Quantum Technologies in Erode is a premium web design and development company committed to turning ideas into impactful digital solutions.',
+        content: 'Slash Info Tech in Coimbatore is a premium web design and development company committed to turning ideas into impactful digital solutions.',
         bullets: [
             'Driven by creativity and technology.',
             'Expert team of developers, designers, and strategists.',
@@ -46,13 +46,13 @@ const tabs = [
         id: 'where',
         label: 'Where We Serve',
         title: 'Where We Serve',
-        content: 'Based in the thriving business hub of Erode, we proudly serve clients across Tamil Nadu and beyond — helping local brands achieve global recognition.',
+        content: 'Based in the thriving business hub of Coimbatore, we proudly serve clients across Tamil Nadu and beyond — helping local brands achieve global recognition.',
         bullets: [
             'Serving startups, enterprises, and professionals.',
             'Local presence with international standards.',
             'Remote collaboration for clients across India and overseas.'
         ],
-        highlight: '🌍 Our Reach: From Erode to the world — delivering digital excellence wherever you are.'
+        highlight: '🌍 Our Reach: From Coimbatore to the world — delivering digital excellence wherever you are.'
     }
 ];
 
@@ -95,7 +95,7 @@ export default function TabsSection() {
                                 >
                                     <h3 className="text-2xl font-black mb-4 text-foreground">{tab.title}</h3>
                                     <p className="text-muted-foreground mb-6 leading-relaxed">
-                                        <strong>Ryan Quantum Technologies</strong> {tab.content.split('Ryan Quantum Technologies')[1] || tab.content}
+                                        <strong>Slash Info Tech</strong> {tab.content.split('Slash Info Tech')[1] || tab.content}
                                     </p>
                                     <ul className="space-y-3 mb-8">
                                         {tab.bullets.map((bullet, idx) => (

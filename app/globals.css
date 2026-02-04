@@ -76,7 +76,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 4%;
     --popover-foreground: 0 0% 98%;
-    --primary: 142 70% 45%;
+    --primary: 219 96% 65%;
     --primary-foreground: 240 6% 10%;
     --secondary: 240 4% 16%;
     --secondary-foreground: 0 0% 98%;
@@ -88,7 +88,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 4% 20%;
     --input: 240 4% 20%;
-    --ring: 142 70% 45%;
+    --ring: 219 96% 65%;
   }
 }
 
@@ -139,6 +139,18 @@
     .grid-4-cols {
       grid-template-columns: repeat(4, 1fr);
     }
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
   }
 }
 

@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Slash Info Tech | Web Design & Software Development in Erode & Coimbatore",
-  description: "Slash Info Tech is a premier web design and software development company in Erode and Coimbatore. We deliver high-quality, innovative digital solutions globally.",
+  title: "Slash Info Tech | Web Design & Software Development in Coimbatore",
+  description: "Slash Info Tech is a premier web design and software development company in Coimbatore. We deliver high-quality, innovative digital solutions globally.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
-      <body className={`${inter.className} antialiased selection:bg-primary/30`} suppressContentEditableWarning={true}>
+      <body className={`${inter.className} antialiased selection:bg-primary/30`} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

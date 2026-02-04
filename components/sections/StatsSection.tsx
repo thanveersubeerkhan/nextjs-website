@@ -16,18 +16,25 @@ export default function StatsSection() {
                     <h2 className="text-4xl md:text-5xl font-black text-foreground uppercase tracking-tight">Proven Success and <br />Unwavering Expertise.</h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
                     {stats.map((stat, index) => (
-                        <div key={index} className="flex flex-col items-center">
-                            <div className="relative w-24 h-24 mb-6">
-                                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
+                        <div key={index} className="flex flex-col items-center group transition-all duration-300 hover:-translate-y-2">
+                            <div className="relative w-20 h-20 md:w-24 md:h-24 mb-6">
+                                <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse group-hover:bg-primary/30 transition-colors"></div>
                                 <img
                                     src={stat.image}
                                     alt={stat.label}
-                                    className="relative z-10 w-full h-full object-contain animate-in fade-in zoom-in duration-1000"
+                                    className="relative z-10 w-full h-full object-contain"
                                 />
                             </div>
-                            <StatCard {...stat} />
+                            <div className="text-center">
+                                <div className="text-4xl md:text-5xl font-black text-primary mb-2 tracking-tighter">
+                                    {stat.value}{stat.suffix}
+                                </div>
+                                <div className="text-xs font-black text-muted-foreground uppercase tracking-[0.2em]">
+                                    {stat.label}
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

@@ -25,7 +25,7 @@ export default function ContactStepsSection() {
                 <div className="max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl lg:text-4xl font-black text-foreground mb-6">Let's Turn Your Vision Into Reality</h2>
                     <p className="text-muted-foreground leading-relaxed text-lg">
-                        Connect with our team at Ryan Quantum Technologies to strengthen your digital foundation, enhance efficiency, and elevate your brand online. Let's start building your digital future today.
+                        Connect with our team at Slash Info Tech to strengthen your digital foundation, enhance efficiency, and elevate your brand online. Let's start building your digital future today.
                     </p>
                 </div>
 

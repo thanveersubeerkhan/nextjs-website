@@ -15,10 +15,10 @@ export default function ProcessSection() {
                     <h2 className="text-3xl md:text-5xl font-black text-foreground mb-6 uppercase tracking-tight">Our Proven Workflow — From Vision to Victory</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto">We follow a systematic approach to ensure every project is delivered with excellence and precision.</p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                     {steps.map((step, index) => (
                         <div key={step.title} className="flex flex-col items-center text-center group">
-                            <div className="w-16 h-16 bg-background rounded-2xl flex items-center justify-center text-3xl mb-4 border border-border group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
+                            <div className="w-16 h-16 bg-background rounded-2xl flex items-center justify-center text-3xl mb-4 border border-border group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm relative z-10">
                                 {step.icon}
                             </div>
                             <h4 className="font-bold text-foreground mb-2">{step.title}</h4>

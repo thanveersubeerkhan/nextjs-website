@@ -44,10 +44,13 @@ export default function Header() {
         <>
             <header
                 ref={headerRef}
-                className={`fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300 ${isScrolled || isMenuOpen
-                    ? 'bg-background/95 border-b border-border shadow-sm backdrop-blur py-3'
-                    : 'bg-transparent border-b border-transparent py-5'
-                    }`}
+                // className={`fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300 ${isScrolled || isMenuOpen
+                //     ? 'bg-background/95 border-b border-border shadow-sm backdrop-blur py-3'
+                //     : 'bg-white dark:bg-transparent border-b border-transparent py-5'
+                //     }`}
+                className={`fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300 
+                    bg-background/95 border-b border-border shadow-sm backdrop-blur py-3
+                  `}
             >
                 <nav className="container flex items-center justify-between">
                     {/* Logo - click closes menu */}
@@ -57,9 +60,9 @@ export default function Header() {
                         onClick={() => setIsMenuOpen(false)}
                     >
                         <img
-                            src="https://ryanquantum.com/wp-content/uploads/2025/11/ryan-white.png"
-                            alt="RYAN QUANTUM"
-                            className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${isScrolled ? 'brightness-0 dark:brightness-100' : 'brightness-0 invert dark:brightness-100 dark:invert-0'}`}
+                            src="/logo.png"
+                            alt="Slash Info Tech"
+                            className="h-8 md:h-12 w-auto object-contain transition-all duration-300 brightness-0 dark:brightness-100"
                         />
                     </Link>
 
@@ -128,7 +131,7 @@ export default function Header() {
                         })}
 
                         <div className="flex items-center space-x-4 border-l border-border pl-6 ml-4">
-                            <ThemeToggle />
+                            {/* <ThemeToggle /> */}
                             <Button size="sm" className="rounded-full shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-transform font-black">
                                 Get Started
                             </Button>
@@ -137,7 +140,7 @@ export default function Header() {
 
                     {/* Mobile Toggle */}
                     <div className="flex items-center space-x-3 md:hidden z-[110]">
-                        <ThemeToggle />
+                        {/* <ThemeToggle /> */}
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="p-2 rounded-xl bg-accent text-accent-foreground border border-border transition-all active:scale-95"

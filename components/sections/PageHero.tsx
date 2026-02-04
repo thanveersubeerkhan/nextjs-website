@@ -3,35 +3,42 @@ type PageHeroProps = {
     subtitle?: string;
     className?: string;
     backgroundImage?: string;
+    gradientOverlay?: string;
 };
 
-export default function PageHero({ title, subtitle, className = '', backgroundImage }: PageHeroProps) {
+export default function PageHero({ title, subtitle, className = '', backgroundImage, gradientOverlay }: PageHeroProps) {
     return (
-        <section className={`bg-background text-foreground pt-32 pb-20 md:pt-40 md:pb-32 transition-colors duration-500 border-b border-border relative overflow-hidden ${className}`}>
-            {/* Dynamic Background Gradients or Image */}
-            {backgroundImage ? (
-                <div className="absolute inset-0 z-0">
-                    <img src={backgroundImage} alt={title} className="w-full h-full object-cover opacity-20 dark:opacity-10" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+        <section className={`relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden ${className}`}>
+            {/* Background with overlay */}
+            <div className="absolute inset-0 z-0">
+                <div className={`absolute inset-0 bg-blue-900 ${gradientOverlay ? '' : 'bg-blue-900'}`}>
+                    {/* Only show default blue if needed, mostly covered by overlay */}
                 </div>
-            ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 dark:from-primary/10 dark:to-transparent -z-10"></div>
-            )}
 
-            {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(21,128,61,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(21,128,61,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)] opacity-50 transition-opacity pointer-events-none"></div>
+                {backgroundImage ? (
+                    <div className="absolute inset-0 z-0">
+                        <img src={backgroundImage} alt={title} className="w-full h-full object-cover opacity-20 mix-blend-overlay" />
+                    </div>
+                ) : (
+                    <div className="absolute inset-0 bg-[url('https://ryanquantum.com/wp-content/uploads/2025/11/pexels-vladbagacian-3987066-scaled.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+                )}
 
-            <div className="container text-center relative z-10">
-                <h1 className="text-4xl md:text-6xl font-black mb-6 animate-in fade-in slide-in-from-bottom duration-500 text-foreground tracking-tight">{title}</h1>
+                <div className={`absolute inset-0 opacity-90 ${gradientOverlay || 'bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900'}`}></div>
+            </div>
+
+            <div className="container relative z-10 text-center">
+                <h1 className="text-4xl md:text-6xl font-black mb-6 animate-in fade-in slide-in-from-bottom duration-500 text-white tracking-tight uppercase">
+                    {title}
+                </h1>
                 {subtitle && (
-                    <p className="text-lg md:text-xl text-primary max-w-2xl mx-auto font-medium animate-in fade-in slide-in-from-bottom duration-700 leading-relaxed">
+                    <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto font-medium animate-in fade-in slide-in-from-bottom duration-700 leading-relaxed">
                         {subtitle}
                     </p>
                 )}
             </div>
 
             {/* Accent Glow */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
         </section>
     );
 }

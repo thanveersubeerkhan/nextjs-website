@@ -6,52 +6,40 @@ export type Service = {
 };
 
 export const services: Service[] = [
+    // {
+    //     title: "Web Design",
+    //     description: "Visually stunning and user-friendly designs tailored for your brand.",
+    //     icon: "🎨",
+    //     slug: "web-design",
+    // },
     {
-        title: "Business Websites",
-        description: "Professional and goal-driven websites that build your brand’s digital identity and convert visitors into customers.",
-        icon: "💼",
-        slug: "business-websites",
+        title: "Mobile App & Web Development",
+        description: "Scalable websites and high-performance mobile apps built for the modern world.",
+        icon: "💻",
+        slug: "web-development",
     },
     {
-        title: "Magazine Websites",
-        description: "Visually dynamic and content-rich designs tailored for publishers, blogs, and online magazines.",
-        icon: "📰",
-        slug: "magazine-websites",
+        title: "Software Development",
+        description: "Custom software solutions to automate and grow your business.",
+        icon: "⚙️",
+        slug: "software-development",
+    },
+    /* {
+        title: "Mobile App Development",
+        description: "Innovative mobile apps for iOS and Android platforms.",
+        icon: "📱",
+        slug: "mobile-app-development",
+    }, */
+    {
+        title: "Digital Marketing",
+        description: "Strategic marketing solutions to boost your online presence.",
+        icon: "📈",
+        slug: "digital-marketing",
     },
     {
-        title: "E-commerce Websites",
-        description: "Feature-rich online stores built for smooth transactions, product management, and responsive user journeys.",
-        icon: "🛒",
-        slug: "ecommerce-websites",
-    },
-    {
-        title: "Blogs",
-        description: "SEO-optimized blogging platforms to express your ideas, boost visibility, and grow your audience organically.",
-        icon: "✍️",
-        slug: "blogs",
-    },
-    {
-        title: "Portfolio Websites",
-        description: "Elegant portfolios that highlight your work beautifully — perfect for creatives, artists, and freelancers.",
-        icon: "🎨",
-        slug: "portfolio-websites",
-    },
-    {
-        title: "Landing Pages",
-        description: "High-impact landing pages designed to promote offers, capture leads, and drive conversions effectively.",
-        icon: "🚀",
-        slug: "landing-pages",
-    },
-    {
-        title: "Social Media Websites",
-        description: "Interactive social and community websites that foster engagement, sharing, and real-time interaction.",
-        icon: "🌐",
-        slug: "social-media-websites",
-    },
-    {
-        title: "Directory & Contact Pages",
-        description: "Structured directories with smart filters, maps, and responsive contact forms for effortless communication.",
-        icon: "📇",
-        slug: "directory-contact-pages",
+        title: "UI/UX & Graphic Design",
+        description: "Crafting intuitive digital experiences and compelling brand identities.",
+        icon: "✨",
+        slug: "ui-ux-design",
     },
 ];

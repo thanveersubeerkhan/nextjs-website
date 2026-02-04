@@ -28,7 +28,7 @@ A container component with consistent padding, border, and hover effects.
 ### `Input.tsx` / `Textarea.tsx`
 Form elements styled with theme-aware borders and focus states.
 - **Props**: Standard HTML input/textarea attributes.
-- **Key Features**: Focus ring uses the `--ring` variable (Brand Green).
+- **Key Features**: Focus ring uses the `--ring` variable (Brand Blue).
 
 ### `ServiceCard.tsx`
 Specialized card for displaying service highlights.
@@ -123,7 +123,7 @@ The site uses a customized CSS variable system mapped to Tailwind.
 |-------|-------------|------------|-----------|
 | `--background` | Page bg | White | #0a0a0a |
 | `--foreground` | Main text | #0a0a0a | #fafafa |
-| `--primary` | Brand Color | Green (600) | Green (500) |
+| `--primary` | Brand Color | Blue (600) | Blue (500) |
 | `--muted` | Secondary bg | #f5f5f5 | #262626 |
 
 ### Utility Classes

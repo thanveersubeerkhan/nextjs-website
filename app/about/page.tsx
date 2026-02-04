@@ -1,8 +1,9 @@
 import PageHero from '@/components/sections/PageHero';
 import CTASection from '@/components/sections/CTASection';
-import ProcessSection from '@/components/sections/ProcessSection';
+import AboutWorkflow from '@/components/sections/AboutWorkflow';
 import StatsSection from '@/components/sections/StatsSection';
-import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
+import AboutWhyChooseUs from '@/components/sections/AboutWhyChooseUs';
+import DifferentiatorsSection from '@/components/sections/DifferentiatorsSection';
 import { ChevronRight } from 'lucide-react';
 
 export default function AboutPage() {
@@ -27,7 +28,7 @@ export default function AboutPage() {
                         <div className="lg:col-span-1 space-y-6">
                             <h3 className="text-2xl font-bold text-foreground border-l-4 border-primary pl-4">Who Are We</h3>
                             <p className="text-muted-foreground leading-relaxed">
-                                We are more than just a web design company — we are your digital growth partners. At <strong className="text-foreground">Ryan Quantum Technologies</strong>, our mission is to transform every vision into a powerful online presence. Our experienced team blends design thinking, technical expertise, and local insights to deliver websites and digital platforms that inspire, engage, and perform.
+                                We are more than just a web design company — we are your digital growth partners. At <strong className="text-foreground">Slash Info Tech</strong>, our mission is to transform every vision into a powerful online presence. Our experienced team blends design thinking, technical expertise, and local insights to deliver websites and digital platforms that inspire, engage, and perform.
                             </p>
                         </div>
 
@@ -55,13 +56,15 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            <ProcessSection />
+            <AboutWorkflow />
 
-            <WhyChooseUsSection />
+            <AboutWhyChooseUs />
+
+            <DifferentiatorsSection />
 
             <StatsSection />
 
-            <CTASection variant="gradient" />
+            {/* <CTASection variant="gradient" /> */}
         </div>
     );
 }

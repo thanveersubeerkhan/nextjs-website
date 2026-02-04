@@ -5,8 +5,8 @@ export default function ContactInfoSection() {
         {
             icon: Phone,
             title: "Reach Us",
-            details: ["+91 96985 48633", "+91 8438 8438 07"],
-            href: "tel:+919698548633"
+            details: ["+91 96777 04758", "+91 96777 04785"],
+            href: "tel:+919677704758"
         },
         {
             icon: Mail,
@@ -35,9 +35,10 @@ export default function ContactInfoSection() {
                     </div>
                     <div>
                         <h4 className="font-bold text-foreground text-lg mb-2">Address</h4>
-                        <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-                            Old .146, New No.8, Meenakshi Sundatam Street, Thirunagar Colony, Erode-638 003
-                        </p>
+                        <div className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                            <strong>Slash Info Tech</strong><br />
+                            62, Suriya Complex, Gandhi Street, Thaneerpanthal, Road, BR Puram, Hope College, Coimbatore, Tamil Nadu 641004
+                        </div>
                     </div>
                 </div>
 

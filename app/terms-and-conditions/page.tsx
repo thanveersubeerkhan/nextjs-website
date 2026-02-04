@@ -38,7 +38,7 @@ export default function TermsPage() {
 
                         <h2 className="text-2xl font-bold mb-6 text-foreground">6. Governing Law</h2>
                         <p className="text-muted-foreground mb-8 leading-relaxed">
-                            These terms are governed by the laws of India. Any disputes will be subject to the exclusive jurisdiction of the courts in Erode, Tamil Nadu.
+                            These terms are governed by the laws of India. Any disputes will be subject to the exclusive jurisdiction of the courts in Coimbatore, Tamil Nadu.
                         </p>
                     </div>
                 </div>
